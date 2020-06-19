@@ -39,6 +39,7 @@
 #include <google/protobuf/stubs/strutil.h>
 
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -1207,3 +1208,4 @@ void RepeatedStringFieldGenerator::GenerateByteSize(
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

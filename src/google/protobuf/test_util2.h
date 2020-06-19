@@ -36,6 +36,7 @@
 #include <google/protobuf/util/message_differencer.h>
 #include <google/protobuf/testing/googletest.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace TestUtil {
@@ -59,7 +60,7 @@ inline std::string MaybeTranslatePath(const std::string& google3_path) {
 }
 
 inline std::string TestSourceDir() {
-  return google::protobuf::TestSourceDir();
+  return linker::google::protobuf::TestSourceDir();
 }
 
 inline std::string GetTestDataPath(const std::string& google3_path) {
@@ -78,5 +79,6 @@ bool EqualsToSerialized(const ProtoType& message, const std::string& data) {
 }  // namespace TestUtil
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_TEST_UTIL2_H__

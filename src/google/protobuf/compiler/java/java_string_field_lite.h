@@ -40,6 +40,7 @@
 #include <string>
 #include <google/protobuf/compiler/java/java_field.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -50,7 +51,9 @@ class ClassNameResolver;  // name_resolver.h
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -131,5 +134,6 @@ class RepeatedImmutableStringFieldLiteGenerator
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_JAVA_STRING_FIELD_LITE_H__

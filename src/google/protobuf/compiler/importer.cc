@@ -56,6 +56,7 @@
 #include <ctype.h>
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -63,8 +64,8 @@ namespace compiler {
 #ifdef _WIN32
 // DO NOT include <io.h>, instead create functions in io_win32.{h,cc} and import
 // them like we do below.
-using google::protobuf::io::win32::access;
-using google::protobuf::io::win32::open;
+using linker::google::protobuf::io::win32::access;
+using linker::google::protobuf::io::win32::open;
 #endif
 
 // Returns true if the text looks like a Windows-style absolute path, starting
@@ -505,3 +506,4 @@ io::ZeroCopyInputStream* DiskSourceTree::OpenDiskFile(
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

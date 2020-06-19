@@ -7,15 +7,16 @@
 
 #include "google/protobuf/compiler/plugin.h"
 
-using google::protobuf::FileDescriptorProto;
-using google::protobuf::FileDescriptor;
-using google::protobuf::DescriptorPool;
-using google::protobuf::io::Printer;
-using google::protobuf::util::SchemaGroupStripper;
-using google::protobuf::util::EnumScrubber;
-using google::protobuf::util::ExtensionStripper;
-using google::protobuf::util::FieldScrubber;
+using linker::google::protobuf::FileDescriptorProto;
+using linker::google::protobuf::FileDescriptor;
+using linker::google::protobuf::DescriptorPool;
+using linker::google::protobuf::io::Printer;
+using linker::google::protobuf::util::SchemaGroupStripper;
+using linker::google::protobuf::util::EnumScrubber;
+using linker::google::protobuf::util::ExtensionStripper;
+using linker::google::protobuf::util::FieldScrubber;
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -71,7 +72,7 @@ class Proto2ToProto3Generator final : public CodeGenerator {
     std::vector<std::pair<string,string>> option_pairs;
     ParseGeneratorParameter(parameter, &option_pairs);
 
-    std::unique_ptr<google::protobuf::io::ZeroCopyOutputStream> output(
+    std::unique_ptr<linker::google::protobuf::io::ZeroCopyOutputStream> output(
         context->Open(basename + ".proto"));
     string content = GetPool()->BuildFile(new_file)->DebugString();
     Printer printer(output.get(), '$');
@@ -108,8 +109,9 @@ class Proto2ToProto3Generator final : public CodeGenerator {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 int main(int argc, char* argv[]) {
-  google::protobuf::compiler::Proto2ToProto3Generator generator;
-  return google::protobuf::compiler::PluginMain(argc, argv, &generator);
+  linker::google::protobuf::compiler::Proto2ToProto3Generator generator;
+  return linker::google::protobuf::compiler::PluginMain(argc, argv, &generator);
 }

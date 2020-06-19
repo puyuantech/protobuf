@@ -40,6 +40,7 @@
 
 #include <google/protobuf/pyext/message.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -67,5 +68,6 @@ ExtensionDict* NewExtensionDict(CMessage *parent);
 }  // namespace python
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_EXTENSION_DICT_H__

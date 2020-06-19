@@ -45,6 +45,7 @@
 #define PROTOBUF_HAS_DEATH_TEST
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -100,5 +101,6 @@ class ScopedMemoryLog {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_GOOGLETEST_H__

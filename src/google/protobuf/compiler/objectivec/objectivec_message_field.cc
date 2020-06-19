@@ -36,6 +36,7 @@
 #include <google/protobuf/io/printer.h>
 #include <google/protobuf/wire_format.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -105,3 +106,4 @@ void RepeatedMessageFieldGenerator::DetermineForwardDeclarations(
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

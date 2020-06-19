@@ -45,6 +45,7 @@
 #include <google/protobuf/stubs/strutil.h>
 #include <google/protobuf/stubs/map_util.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -228,3 +229,4 @@ void EnumLiteGenerator::Generate(io::Printer* printer) {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

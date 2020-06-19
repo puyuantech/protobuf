@@ -35,6 +35,7 @@
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -59,10 +60,10 @@ AnyMetadata::AnyMetadata(UrlType* type_url, ValueType* value)
 void AnyMetadata::InternalPackFrom(const MessageLite& message,
                                    StringPiece type_url_prefix,
                                    StringPiece type_name) {
-  type_url_->SetNoArena(&::google::protobuf::internal::GetEmptyString(),
+  type_url_->SetNoArena(&::linker::google::protobuf::internal::GetEmptyString(),
                         GetTypeUrl(type_name, type_url_prefix));
   message.SerializeToString(value_->MutableNoArena(
-      &::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      &::linker::google::protobuf::internal::GetEmptyStringAlreadyInited()));
 }
 
 bool AnyMetadata::InternalUnpackTo(StringPiece type_name,
@@ -120,3 +121,4 @@ bool ParseAnyTypeUrl(const std::string& type_url, std::string* full_type_name) {
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

@@ -34,6 +34,7 @@
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/io/printer.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -62,5 +63,6 @@ class ExtensionGenerator {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_OBJECTIVEC_MESSAGE_H__

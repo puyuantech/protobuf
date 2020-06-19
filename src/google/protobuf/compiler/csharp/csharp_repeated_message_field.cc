@@ -42,6 +42,7 @@
 #include <google/protobuf/compiler/csharp/csharp_message_field.h>
 #include <google/protobuf/compiler/csharp/csharp_wrapper_field.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -160,3 +161,4 @@ void RepeatedMessageFieldGenerator::GenerateExtensionCode(io::Printer* printer) 
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

@@ -55,6 +55,7 @@
 #include <google/protobuf/stubs/substitute.h>
 
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -290,3 +291,4 @@ void PrintExtraFieldInfo(const std::map<std::string, std::string>& variables,
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

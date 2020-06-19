@@ -39,6 +39,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace io {
@@ -46,7 +47,9 @@ class Printer;  // printer.h
 }
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -95,6 +98,7 @@ PROTOC_EXPORT std::string EscapeJavadoc(const std::string& input);
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

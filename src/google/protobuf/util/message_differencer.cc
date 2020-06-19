@@ -54,6 +54,7 @@
 // Always include as last one, otherwise it can break compilation
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -61,7 +62,7 @@ namespace util {
 
 // A reporter to report the total number of diffs.
 // TODO(ykzhu): we can improve this to take into account the value differencers.
-class NumDiffsReporter : public google::protobuf::util::MessageDifferencer::Reporter {
+class NumDiffsReporter : public linker::google::protobuf::util::MessageDifferencer::Reporter {
  public:
   NumDiffsReporter() : num_diffs_(0) {}
 
@@ -71,24 +72,24 @@ class NumDiffsReporter : public google::protobuf::util::MessageDifferencer::Repo
 
   // Report that a field has been added into Message2.
   void ReportAdded(
-      const google::protobuf::Message& message1, const google::protobuf::Message& message2,
-      const std::vector<google::protobuf::util::MessageDifferencer::SpecificField>&
+      const linker::google::protobuf::Message& message1, const linker::google::protobuf::Message& message2,
+      const std::vector<linker::google::protobuf::util::MessageDifferencer::SpecificField>&
           field_path) override {
     ++num_diffs_;
   }
 
   // Report that a field has been deleted from Message1.
   void ReportDeleted(
-      const google::protobuf::Message& message1, const google::protobuf::Message& message2,
-      const std::vector<google::protobuf::util::MessageDifferencer::SpecificField>&
+      const linker::google::protobuf::Message& message1, const linker::google::protobuf::Message& message2,
+      const std::vector<linker::google::protobuf::util::MessageDifferencer::SpecificField>&
           field_path) override {
     ++num_diffs_;
   }
 
   // Report that the value of a field has been modified.
   void ReportModified(
-      const google::protobuf::Message& message1, const google::protobuf::Message& message2,
-      const std::vector<google::protobuf::util::MessageDifferencer::SpecificField>&
+      const linker::google::protobuf::Message& message1, const linker::google::protobuf::Message& message2,
+      const std::vector<linker::google::protobuf::util::MessageDifferencer::SpecificField>&
           field_path) override {
     ++num_diffs_;
   }
@@ -1975,3 +1976,4 @@ MessageDifferencer::CreateMultipleFieldsMapKeyComparator(
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

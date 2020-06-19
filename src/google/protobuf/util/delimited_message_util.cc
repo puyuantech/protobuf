@@ -34,6 +34,7 @@
 #include <google/protobuf/util/delimited_message_util.h>
 #include <google/protobuf/io/coded_stream.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -119,3 +120,4 @@ bool SerializeDelimitedToCodedStream(const MessageLite& message,
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

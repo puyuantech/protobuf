@@ -41,6 +41,7 @@
 #include <google/protobuf/stubs/map_util.h>
 #include <google/protobuf/stubs/mathutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -209,3 +210,4 @@ FieldComparator::ComparisonResult DefaultFieldComparator::ResultFromBoolean(
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

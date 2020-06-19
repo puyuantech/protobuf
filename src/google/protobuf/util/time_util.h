@@ -54,14 +54,15 @@ struct timeval {
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
 
 // Utility functions for Timestamp and Duration.
 class PROTOBUF_EXPORT TimeUtil {
-  typedef google::protobuf::Timestamp Timestamp;
-  typedef google::protobuf::Duration Duration;
+  typedef linker::google::protobuf::Timestamp Timestamp;
+  typedef linker::google::protobuf::Duration Duration;
 
  public:
   // The min/max Timestamp/Duration values we support.
@@ -166,7 +167,9 @@ class PROTOBUF_EXPORT TimeUtil {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 // Overloaded operators for Duration.
@@ -306,6 +309,7 @@ inline std::ostream& operator<<(std::ostream& out, const Timestamp& t) {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

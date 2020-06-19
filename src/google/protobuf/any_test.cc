@@ -33,6 +33,7 @@
 #include <gtest/gtest.h>
 
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace {
@@ -55,7 +56,7 @@ TEST(AnyTest, TestPackAndUnpack) {
 TEST(AnyTest, TestUnpackWithTypeMismatch) {
   protobuf_unittest::TestAny payload;
   payload.set_int32_value(13);
-  google::protobuf::Any any;
+  linker::google::protobuf::Any any;
   any.PackFrom(payload);
 
   // Attempt to unpack into the wrong type.
@@ -67,7 +68,7 @@ TEST(AnyTest, TestPackAndUnpackAny) {
   // We can pack a Any message inside another Any message.
   protobuf_unittest::TestAny submessage;
   submessage.set_int32_value(12345);
-  google::protobuf::Any any;
+  linker::google::protobuf::Any any;
   any.PackFrom(submessage);
   protobuf_unittest::TestAny message;
   message.mutable_any_value()->PackFrom(any);
@@ -86,7 +87,7 @@ TEST(AnyTest, TestPackAndUnpackAny) {
 TEST(AnyTest, TestPackWithCustomTypeUrl) {
   protobuf_unittest::TestAny submessage;
   submessage.set_int32_value(12345);
-  google::protobuf::Any any;
+  linker::google::protobuf::Any any;
   // Pack with a custom type URL prefix.
   any.PackFrom(submessage, "type.myservice.com");
   EXPECT_EQ("type.myservice.com/protobuf_unittest.TestAny", any.type_url());
@@ -106,17 +107,17 @@ TEST(AnyTest, TestPackWithCustomTypeUrl) {
 TEST(AnyTest, TestIs) {
   protobuf_unittest::TestAny submessage;
   submessage.set_int32_value(12345);
-  google::protobuf::Any any;
+  linker::google::protobuf::Any any;
   any.PackFrom(submessage);
   ASSERT_TRUE(any.ParseFromString(any.SerializeAsString()));
   EXPECT_TRUE(any.Is<protobuf_unittest::TestAny>());
-  EXPECT_FALSE(any.Is<google::protobuf::Any>());
+  EXPECT_FALSE(any.Is<linker::google::protobuf::Any>());
 
   protobuf_unittest::TestAny message;
   message.mutable_any_value()->PackFrom(any);
   ASSERT_TRUE(message.ParseFromString(message.SerializeAsString()));
   EXPECT_FALSE(message.any_value().Is<protobuf_unittest::TestAny>());
-  EXPECT_TRUE(message.any_value().Is<google::protobuf::Any>());
+  EXPECT_TRUE(message.any_value().Is<linker::google::protobuf::Any>());
 
   any.set_type_url("/protobuf_unittest.TestAny");
   EXPECT_TRUE(any.Is<protobuf_unittest::TestAny>());
@@ -132,12 +133,12 @@ TEST(AnyTest, MoveConstructor) {
   protobuf_unittest::TestAny payload;
   payload.set_int32_value(12345);
 
-  google::protobuf::Any src;
+  linker::google::protobuf::Any src;
   src.PackFrom(payload);
 
   const char* type_url = src.type_url().data();
 
-  google::protobuf::Any dst(std::move(src));
+  linker::google::protobuf::Any dst(std::move(src));
   EXPECT_EQ(type_url, dst.type_url().data());
   payload.Clear();
   ASSERT_TRUE(dst.UnpackTo(&payload));
@@ -148,12 +149,12 @@ TEST(AnyTest, MoveAssignment) {
   protobuf_unittest::TestAny payload;
   payload.set_int32_value(12345);
 
-  google::protobuf::Any src;
+  linker::google::protobuf::Any src;
   src.PackFrom(payload);
 
   const char* type_url = src.type_url().data();
 
-  google::protobuf::Any dst;
+  linker::google::protobuf::Any dst;
   dst = std::move(src);
   EXPECT_EQ(type_url, dst.type_url().data());
   payload.Clear();
@@ -165,3 +166,4 @@ TEST(AnyTest, MoveAssignment) {
 }  // namespace
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

@@ -37,6 +37,7 @@
 
 #include <google/protobuf/descriptor.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace python {
@@ -100,5 +101,6 @@ bool InitDescriptor();
 }  // namespace python
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_DESCRIPTOR_H__

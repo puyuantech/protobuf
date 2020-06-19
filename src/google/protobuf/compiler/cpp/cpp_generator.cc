@@ -45,6 +45,7 @@
 #include <google/protobuf/io/printer.h>
 #include <google/protobuf/io/zero_copy_stream.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -215,3 +216,4 @@ bool CppGenerator::Generate(const FileDescriptor* file,
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

@@ -37,6 +37,7 @@
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/wire_format_lite.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -105,3 +106,4 @@ bool MergePartialFromCodedStreamLite(MessageLite* msg, const ParseTable& table,
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

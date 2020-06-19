@@ -45,6 +45,7 @@
 #include <google/protobuf/compiler/csharp/csharp_helpers.h>
 #include <google/protobuf/compiler/csharp/csharp_names.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -445,3 +446,4 @@ std::string FieldGeneratorBase::capitalized_type_name() {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

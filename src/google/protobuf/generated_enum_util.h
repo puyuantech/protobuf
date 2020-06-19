@@ -42,6 +42,7 @@
 #error "You cannot SWIG proto headers"
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -77,6 +78,7 @@ PROTOBUF_EXPORT bool InitializeEnumStrings(
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

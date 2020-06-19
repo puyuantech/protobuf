@@ -37,6 +37,7 @@
 #include <google/protobuf/stubs/logging.h>
 #include <google/protobuf/stubs/common.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace python {
@@ -160,5 +161,6 @@ inline Dest checked_numeric_cast(Source source) {
 }  // namespace python
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_SAFE_NUMERICS_H__

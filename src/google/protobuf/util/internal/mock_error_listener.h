@@ -36,6 +36,7 @@
 #include <gmock/gmock.h>
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -60,5 +61,6 @@ class MockErrorListener : public ErrorListener {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_UTIL_CONVERTER_MOCK_ERROR_LISTENER_H__

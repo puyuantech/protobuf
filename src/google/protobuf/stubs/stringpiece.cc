@@ -37,6 +37,7 @@
 
 #include <google/protobuf/stubs/logging.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 std::ostream& operator<<(std::ostream& o, StringPiece piece) {
@@ -268,3 +269,4 @@ const StringPiece::size_type StringPiece::npos = size_type(-1);
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

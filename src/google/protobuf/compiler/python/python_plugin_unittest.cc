@@ -47,6 +47,7 @@
 #include <google/protobuf/testing/googletest.h>
 #include <gtest/gtest.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -160,3 +161,4 @@ TEST(PythonPluginTest, ImportTest) {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

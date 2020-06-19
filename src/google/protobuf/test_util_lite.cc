@@ -39,6 +39,7 @@
 #include <gtest/gtest.h>
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -1968,3 +1969,4 @@ void TestUtilLite::ExpectPackedExtensionsModified(
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

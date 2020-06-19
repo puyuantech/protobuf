@@ -63,6 +63,7 @@
 
 // ===================================================================
 // emulates google3/base/mutex.h
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -177,6 +178,7 @@ using internal::MutexLockMaybe;
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #undef GOOGLE_PROTOBUF_ACQUIRE
 #undef GOOGLE_PROTOBUF_RELEASE

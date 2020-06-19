@@ -45,6 +45,7 @@
 #error "You cannot SWIG proto headers"
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -185,6 +186,7 @@ struct MapEntryToMapField<MapEntryLite<T, Key, Value, kKeyFieldType,
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

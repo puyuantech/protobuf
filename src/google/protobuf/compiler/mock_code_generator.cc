@@ -61,6 +61,7 @@
 #undef minor
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -326,3 +327,4 @@ std::string MockCodeGenerator::GetOutputFileContent(
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

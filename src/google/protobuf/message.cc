@@ -62,6 +62,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -140,8 +141,8 @@ namespace internal {
 
 class ReflectionAccessor {
  public:
-  static void* GetOffset(void* msg, const google::protobuf::FieldDescriptor* f,
-                         const google::protobuf::Reflection* r) {
+  static void* GetOffset(void* msg, const linker::google::protobuf::FieldDescriptor* f,
+                         const linker::google::protobuf::Reflection* r) {
     return static_cast<char*>(msg) + r->schema_.GetFieldOffset(f);
   }
 
@@ -552,7 +553,7 @@ class GeneratedMessageFactory : public MessageFactory {
  public:
   static GeneratedMessageFactory* singleton();
 
-  void RegisterFile(const google::protobuf::internal::DescriptorTable* table);
+  void RegisterFile(const linker::google::protobuf::internal::DescriptorTable* table);
   void RegisterType(const Descriptor* descriptor, const Message* prototype);
 
   // implements MessageFactory ---------------------------------------
@@ -560,7 +561,7 @@ class GeneratedMessageFactory : public MessageFactory {
 
  private:
   // Only written at static init time, so does not require locking.
-  std::unordered_map<const char*, const google::protobuf::internal::DescriptorTable*,
+  std::unordered_map<const char*, const linker::google::protobuf::internal::DescriptorTable*,
                      hash<const char*>, streq>
       file_map_;
 
@@ -576,7 +577,7 @@ GeneratedMessageFactory* GeneratedMessageFactory::singleton() {
 }
 
 void GeneratedMessageFactory::RegisterFile(
-    const google::protobuf::internal::DescriptorTable* table) {
+    const linker::google::protobuf::internal::DescriptorTable* table) {
   if (!InsertIfNotPresent(&file_map_, table->filename, table)) {
     GOOGLE_LOG(FATAL) << "File is already registered: " << table->filename;
   }
@@ -645,7 +646,7 @@ MessageFactory* MessageFactory::generated_factory() {
 }
 
 void MessageFactory::InternalRegisterGeneratedFile(
-    const google::protobuf::internal::DescriptorTable* table) {
+    const linker::google::protobuf::internal::DescriptorTable* table) {
   GeneratedMessageFactory::singleton()->RegisterFile(table);
 }
 
@@ -733,3 +734,4 @@ PROTOBUF_NOINLINE
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

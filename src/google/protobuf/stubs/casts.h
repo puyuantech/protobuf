@@ -35,6 +35,7 @@
 
 #include <google/protobuf/stubs/common.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -131,4 +132,5 @@ using internal::bit_cast;
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 #endif  // GOOGLE_PROTOBUF_CASTS_H__

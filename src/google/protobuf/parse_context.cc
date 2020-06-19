@@ -41,6 +41,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -613,3 +614,4 @@ const char* UnknownFieldParse(uint32 tag,
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

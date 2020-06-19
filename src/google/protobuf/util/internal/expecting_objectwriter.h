@@ -55,6 +55,7 @@
 #include <gmock/gmock.h>
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -236,5 +237,6 @@ class ExpectingObjectWriter : public ObjectWriter {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_UTIL_CONVERTER_EXPECTING_OBJECTWRITER_H__

@@ -41,6 +41,7 @@
 #include <google/protobuf/compiler/cpp/cpp_options.h>
 #include <google/protobuf/descriptor.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace io {
@@ -48,7 +49,9 @@ class Printer;  // printer.h
 }
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -68,7 +71,7 @@ class EnumGenerator {
   void GenerateDefinition(io::Printer* printer);
 
   // Generate specialization of GetEnumDescriptor<MyEnum>().
-  // Precondition: in ::google::protobuf namespace.
+  // Precondition: in ::linker::google::protobuf namespace.
   void GenerateGetEnumDescriptorSpecializations(io::Printer* printer);
 
   // For enums nested within a message, generate code to import all the enum's
@@ -101,5 +104,6 @@ class EnumGenerator {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_CPP_ENUM_H__

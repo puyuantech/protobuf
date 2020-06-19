@@ -57,6 +57,7 @@
 #include <google/protobuf/wire_format_lite.h>
 
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -829,3 +830,4 @@ void InitSCCImpl(SCCInfoBase* scc) {
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

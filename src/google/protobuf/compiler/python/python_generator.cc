@@ -62,6 +62,7 @@
 #include <google/protobuf/stubs/strutil.h>
 #include <google/protobuf/stubs/substitute.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -1459,3 +1460,4 @@ void Generator::CopyPublicDependenciesAliases(
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

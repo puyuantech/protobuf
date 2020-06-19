@@ -59,6 +59,7 @@
 #include <google/protobuf/testing/googletest.h>
 #include <gtest/gtest.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -3704,3 +3705,4 @@ TEST(Anytest, TreatAsSet_DifferentType) {
 }  // namespace
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

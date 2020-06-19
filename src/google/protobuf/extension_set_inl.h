@@ -34,6 +34,7 @@
 #include <google/protobuf/parse_context.h>
 #include <google/protobuf/extension_set.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -270,5 +271,6 @@ const char* ExtensionSet::ParseMessageSetItemTmpl(const char* ptr,
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_EXTENSION_SET_INL_H__

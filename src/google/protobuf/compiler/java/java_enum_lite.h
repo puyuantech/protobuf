@@ -39,6 +39,7 @@
 #include <vector>
 #include <google/protobuf/descriptor.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -52,7 +53,9 @@ class Printer;  // printer.h
 }
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -94,5 +97,6 @@ class EnumLiteGenerator {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_JAVA_ENUM_LITE_H__

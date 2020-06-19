@@ -36,6 +36,7 @@
 #include <google/protobuf/io/printer.h>
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -138,3 +139,4 @@ string OneofGenerator::HasIndexAsString(void) const {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

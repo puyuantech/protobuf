@@ -38,6 +38,7 @@
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/compiler/java/java_options.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 class FileDescriptor;
@@ -52,7 +53,9 @@ class ClassNameResolver;  // name_resolver.h
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -109,5 +112,6 @@ class Context {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_JAVA_CONTEXT_H__

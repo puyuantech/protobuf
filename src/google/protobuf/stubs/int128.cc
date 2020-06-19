@@ -38,6 +38,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -190,3 +191,4 @@ std::ostream& operator<<(std::ostream& o, const uint128& b) {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

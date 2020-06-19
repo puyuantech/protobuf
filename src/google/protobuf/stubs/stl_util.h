@@ -35,6 +35,7 @@
 
 #include <google/protobuf/stubs/common.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -67,5 +68,6 @@ inline char* string_as_array(string* str) {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_STUBS_STL_UTIL_H__

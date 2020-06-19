@@ -36,6 +36,7 @@
 #include <google/protobuf/compiler/code_generator.h>
 #include <google/protobuf/compiler/csharp/csharp_field_base.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -91,5 +92,6 @@ class WrapperOneofFieldGenerator : public WrapperFieldGenerator {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_CSHARP_WRAPPER_FIELD_H__

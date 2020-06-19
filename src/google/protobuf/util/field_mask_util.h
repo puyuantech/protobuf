@@ -42,12 +42,13 @@
 // Must be included last.
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
 
 class PROTOBUF_EXPORT FieldMaskUtil {
-  typedef google::protobuf::FieldMask FieldMask;
+  typedef linker::google::protobuf::FieldMask FieldMask;
 
  public:
   // Converts FieldMask to/from string, formatted by separating each path
@@ -240,6 +241,7 @@ class PROTOBUF_EXPORT FieldMaskUtil::TrimOptions {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

@@ -33,6 +33,7 @@
 
 #include "conformance_test.h"
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -65,5 +66,6 @@ class TextFormatConformanceTestSuite : public ConformanceTestSuite {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // TEXT_FORMAT_CONFORMANCE_SUITE_H_

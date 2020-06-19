@@ -67,7 +67,7 @@
 #include "conformance_test.h"
 
 using conformance::ConformanceResponse;
-using google::protobuf::ConformanceTestSuite;
+using linker::google::protobuf::ConformanceTestSuite;
 using std::string;
 using std::vector;
 
@@ -79,6 +79,7 @@ using std::vector;
     exit(1); \
   }
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -343,3 +344,4 @@ void ForkPipeRunner::CheckedRead(int fd, void *buf, size_t len) {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

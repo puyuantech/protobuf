@@ -40,6 +40,7 @@
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/stubs/logging.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -174,3 +175,4 @@ string StringPrintfVector(const char* format, const std::vector<string>& v) {
 }
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

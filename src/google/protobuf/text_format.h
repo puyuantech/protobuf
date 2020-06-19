@@ -55,6 +55,7 @@
 #error "You cannot SWIG proto headers"
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -434,13 +435,13 @@ class PROTOBUF_EXPORT TextFormat {
   // Example input: "user {\n id: 123 extra { gender: MALE language: 'en' }\n}"
   //
   // One use for this function is parsing handwritten strings in test code.
-  // Another use is to parse the output from google::protobuf::Message::DebugString()
+  // Another use is to parse the output from linker::google::protobuf::Message::DebugString()
   // (or ShortDebugString()), because these functions output using
-  // google::protobuf::TextFormat::Print().
+  // linker::google::protobuf::TextFormat::Print().
   //
   // If you would like to read a protocol buffer serialized in the
   // (non-human-readable) binary wire format, see
-  // google::protobuf::MessageLite::ParseFromString().
+  // linker::google::protobuf::MessageLite::ParseFromString().
   static bool Parse(io::ZeroCopyInputStream* input, Message* output);
   // Like Parse(), but reads directly from a string.
   static bool ParseFromString(const std::string& input, Message* output);
@@ -629,6 +630,7 @@ inline TextFormat::ParseInfoTree* TextFormat::CreateNested(
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

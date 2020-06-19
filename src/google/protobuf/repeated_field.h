@@ -72,6 +72,7 @@
 #error "You cannot SWIG proto headers"
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -662,7 +663,7 @@ class PROTOBUF_EXPORT RepeatedPtrFieldBase {
   friend class MergePartialFromCodedStreamHelper;
   friend class AccessorHelper;
   template <typename T>
-  friend struct google::protobuf::WeakRepeatedPtrField;
+  friend struct linker::google::protobuf::WeakRepeatedPtrField;
 
   GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(RepeatedPtrFieldBase);
 };
@@ -2665,6 +2666,7 @@ extern template class PROTOBUF_EXPORT_TEMPLATE_DECLARE
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

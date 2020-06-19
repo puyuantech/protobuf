@@ -47,6 +47,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -80,9 +81,9 @@ void ReflectionOps::Merge(const Message& from, Message* to) {
   const Reflection* from_reflection = GetReflectionOrDie(from);
   const Reflection* to_reflection = GetReflectionOrDie(*to);
   bool is_from_generated = (from_reflection->GetMessageFactory() ==
-                            google::protobuf::MessageFactory::generated_factory());
+                            linker::google::protobuf::MessageFactory::generated_factory());
   bool is_to_generated = (to_reflection->GetMessageFactory() ==
-                          google::protobuf::MessageFactory::generated_factory());
+                          linker::google::protobuf::MessageFactory::generated_factory());
 
   std::vector<const FieldDescriptor*> fields;
   from_reflection->ListFields(from, &fields);
@@ -342,3 +343,4 @@ void ReflectionOps::FindInitializationErrors(const Message& message,
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

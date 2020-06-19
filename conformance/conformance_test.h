@@ -58,6 +58,7 @@ class TestAllTypesProto3;
 }  // namespace proto3
 }  // namespace protobuf_test_messages
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -321,5 +322,6 @@ class ConformanceTestSuite {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // CONFORMANCE_CONFORMANCE_TEST_H

@@ -40,6 +40,7 @@
 #include <google/protobuf/testing/googletest.h>
 #include <gtest/gtest.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -85,3 +86,4 @@ TEST(DelimitedMessageUtilTest, DelimitedMessages) {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

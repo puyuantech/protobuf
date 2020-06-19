@@ -53,6 +53,7 @@
 #include <gtest/gtest.h>
 #include <google/protobuf/stubs/stl_util.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace {
@@ -1776,8 +1777,8 @@ TEST_F(RepeatedPtrFieldPtrsIteratorTest, Sort) {
 
 // -----------------------------------------------------------------------------
 // Unit-tests for the insert iterators
-// google::protobuf::RepeatedFieldBackInserter,
-// google::protobuf::AllocatedRepeatedPtrFieldBackInserter
+// linker::google::protobuf::RepeatedFieldBackInserter,
+// linker::google::protobuf::AllocatedRepeatedPtrFieldBackInserter
 // Ported from util/gtl/proto-array-iterators_unittest.
 
 class RepeatedFieldInsertionIteratorsTest : public testing::Test {
@@ -1997,3 +1998,4 @@ TEST_F(RepeatedFieldInsertionIteratorsTest, MoveProtos) {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

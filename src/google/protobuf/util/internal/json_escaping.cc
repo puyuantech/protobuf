@@ -33,6 +33,7 @@
 #include <google/protobuf/stubs/logging.h>
 #include <google/protobuf/stubs/common.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -367,3 +368,4 @@ void JsonEscaping::Escape(StringPiece input, strings::ByteSink* output) {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

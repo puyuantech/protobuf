@@ -40,6 +40,7 @@
 
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace io {
@@ -74,9 +75,10 @@ float SafeDoubleToFloat(double value) {
 }
 
 double NoLocaleStrtod(const char* str, char** endptr) {
-  return google::protobuf::internal::NoLocaleStrtod(str, endptr);
+  return linker::google::protobuf::internal::NoLocaleStrtod(str, endptr);
 }
 
 }  // namespace io
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

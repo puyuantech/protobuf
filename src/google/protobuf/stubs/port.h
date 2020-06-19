@@ -114,6 +114,7 @@
 #error "Protobuf requires at least C++11."
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -403,6 +404,7 @@ class BigEndian {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

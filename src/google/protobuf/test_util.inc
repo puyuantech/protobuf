@@ -43,6 +43,7 @@
 #include <google/protobuf/message.h>
 #include <gtest/gtest.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace TestUtil {
@@ -2404,3 +2405,4 @@ inline void TestUtil::ExpectAtMostOneFieldSetInOneof(
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

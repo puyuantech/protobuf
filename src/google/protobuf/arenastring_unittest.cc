@@ -46,6 +46,7 @@
 #include <google/protobuf/stubs/strutil.h>
 
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -134,3 +135,4 @@ TEST(ArenaStringPtrTest, ArenaStringPtrOnArenaNoSSO) {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

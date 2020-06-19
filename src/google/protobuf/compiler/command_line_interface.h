@@ -50,6 +50,7 @@
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -78,10 +79,10 @@ class DiskSourceTree;    // importer.h
 // then write a main() procedure like this:
 //
 //   int main(int argc, char* argv[]) {
-//     google::protobuf::compiler::CommandLineInterface cli;
+//     linker::google::protobuf::compiler::CommandLineInterface cli;
 //
 //     // Support generation of C++ source and headers.
-//     google::protobuf::compiler::cpp::CppGenerator cpp_generator;
+//     linker::google::protobuf::compiler::cpp::CppGenerator cpp_generator;
 //     cli.RegisterGenerator("--cpp_out", &cpp_generator,
 //       "Generate C++ source and header.");
 //
@@ -446,6 +447,7 @@ class PROTOC_EXPORT CommandLineInterface {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

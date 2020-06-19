@@ -50,6 +50,7 @@
 #include <google/protobuf/descriptor.pb.h>
 #include <google/protobuf/descriptor.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -3950,3 +3951,4 @@ bool Generator::GenerateAll(const std::vector<const FileDescriptor*>& files,
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

@@ -37,6 +37,7 @@
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/stubs/logging.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -158,5 +159,6 @@ bool MathUtil::WithinFractionOrMargin(const T x, const T y,
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_STUBS_MATHUTIL_H_

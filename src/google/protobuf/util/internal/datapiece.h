@@ -41,6 +41,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -166,7 +167,7 @@ class PROTOBUF_EXPORT DataPiece {
 
   // Same as the ToEnum() method above but with additional flag to ignore
   // unknown enum values.
-  util::StatusOr<int> ToEnum(const google::protobuf::Enum* enum_type,
+  util::StatusOr<int> ToEnum(const linker::google::protobuf::Enum* enum_type,
                                bool use_lower_camel_for_enums,
                                bool case_insensitive_enum_parsing,
                                bool ignore_unknown_enum_values,
@@ -192,7 +193,7 @@ class PROTOBUF_EXPORT DataPiece {
   // Data type for this piece of data.
   Type type_;
 
-  typedef ::google::protobuf::internal::StringPiecePod StringPiecePod;
+  typedef ::linker::google::protobuf::internal::StringPiecePod StringPiecePod;
 
   // Stored piece of data.
   union {
@@ -214,6 +215,7 @@ class PROTOBUF_EXPORT DataPiece {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

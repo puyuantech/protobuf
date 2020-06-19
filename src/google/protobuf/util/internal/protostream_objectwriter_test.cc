@@ -58,6 +58,7 @@
 #include <gtest/gtest.h>
 
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -1184,8 +1185,8 @@ class ProtoStreamObjectWriterTimestampDurationTest
   ProtoStreamObjectWriterTimestampDurationTest() {
     std::vector<const Descriptor*> descriptors;
     descriptors.push_back(TimestampDuration::descriptor());
-    descriptors.push_back(google::protobuf::Timestamp::descriptor());
-    descriptors.push_back(google::protobuf::Duration::descriptor());
+    descriptors.push_back(linker::google::protobuf::Timestamp::descriptor());
+    descriptors.push_back(linker::google::protobuf::Duration::descriptor());
     ResetTypeInfo(descriptors);
   }
 };
@@ -1197,7 +1198,7 @@ INSTANTIATE_TEST_SUITE_P(DifferentTypeInfoSourceTest,
 
 TEST_P(ProtoStreamObjectWriterTimestampDurationTest, ParseTimestamp) {
   TimestampDuration timestamp;
-  google::protobuf::Timestamp* ts = timestamp.mutable_ts();
+  linker::google::protobuf::Timestamp* ts = timestamp.mutable_ts();
   ts->set_seconds(1448249855);
   ts->set_nanos(33155000);
 
@@ -1210,7 +1211,7 @@ TEST_P(ProtoStreamObjectWriterTimestampDurationTest, ParseTimestamp) {
 TEST_P(ProtoStreamObjectWriterTimestampDurationTest,
        ParseTimestampYearNotZeroPadded) {
   TimestampDuration timestamp;
-  google::protobuf::Timestamp* ts = timestamp.mutable_ts();
+  linker::google::protobuf::Timestamp* ts = timestamp.mutable_ts();
   ts->set_seconds(-61665654145);
   ts->set_nanos(33155000);
 
@@ -1223,7 +1224,7 @@ TEST_P(ProtoStreamObjectWriterTimestampDurationTest,
 TEST_P(ProtoStreamObjectWriterTimestampDurationTest,
        ParseTimestampYearZeroPadded) {
   TimestampDuration timestamp;
-  google::protobuf::Timestamp* ts = timestamp.mutable_ts();
+  linker::google::protobuf::Timestamp* ts = timestamp.mutable_ts();
   ts->set_seconds(-61665654145);
   ts->set_nanos(33155000);
 
@@ -1236,7 +1237,7 @@ TEST_P(ProtoStreamObjectWriterTimestampDurationTest,
 TEST_P(ProtoStreamObjectWriterTimestampDurationTest,
        ParseTimestampWithPositiveOffset) {
   TimestampDuration timestamp;
-  google::protobuf::Timestamp* ts = timestamp.mutable_ts();
+  linker::google::protobuf::Timestamp* ts = timestamp.mutable_ts();
   ts->set_seconds(1448249855);
   ts->set_nanos(33155000);
 
@@ -1249,7 +1250,7 @@ TEST_P(ProtoStreamObjectWriterTimestampDurationTest,
 TEST_P(ProtoStreamObjectWriterTimestampDurationTest,
        ParseTimestampWithNegativeOffset) {
   TimestampDuration timestamp;
-  google::protobuf::Timestamp* ts = timestamp.mutable_ts();
+  linker::google::protobuf::Timestamp* ts = timestamp.mutable_ts();
   ts->set_seconds(1448249855);
   ts->set_nanos(33155000);
 
@@ -1452,7 +1453,7 @@ TEST_P(ProtoStreamObjectWriterTimestampDurationTest, InvalidTimestampError8) {
 
 TEST_P(ProtoStreamObjectWriterTimestampDurationTest, ParseDuration) {
   TimestampDuration duration;
-  google::protobuf::Duration* dur = duration.mutable_dur();
+  linker::google::protobuf::Duration* dur = duration.mutable_dur();
   dur->set_seconds(1448216930);
   dur->set_nanos(132262000);
 
@@ -1581,7 +1582,7 @@ class ProtoStreamObjectWriterStructTest
   void ResetProtoWriter() {
     std::vector<const Descriptor*> descriptors;
     descriptors.push_back(StructType::descriptor());
-    descriptors.push_back(google::protobuf::Struct::descriptor());
+    descriptors.push_back(linker::google::protobuf::Struct::descriptor());
     ResetTypeInfo(descriptors);
   }
 };
@@ -1594,7 +1595,7 @@ INSTANTIATE_TEST_SUITE_P(DifferentTypeInfoSourceTest,
 // TODO(skarvaje): Write tests for failure cases.
 TEST_P(ProtoStreamObjectWriterStructTest, StructRenderSuccess) {
   StructType struct_type;
-  google::protobuf::Struct* s = struct_type.mutable_object();
+  linker::google::protobuf::Struct* s = struct_type.mutable_object();
   s->mutable_fields()->operator[]("k1").set_number_value(123);
   s->mutable_fields()->operator[]("k2").set_bool_value(true);
 
@@ -1641,7 +1642,7 @@ TEST_P(ProtoStreamObjectWriterStructTest, StructAcceptsNull) {
 TEST_P(ProtoStreamObjectWriterStructTest, StructValuePreservesNull) {
   StructType struct_type;
   (*struct_type.mutable_object()->mutable_fields())["key"].set_null_value(
-      google::protobuf::NULL_VALUE);
+      linker::google::protobuf::NULL_VALUE);
   EXPECT_CALL(listener_, InvalidValue(_, _, _)).Times(0);
 
   ow_->StartObject("")
@@ -1699,7 +1700,7 @@ TEST_P(ProtoStreamObjectWriterStructTest, RepeatedStructMapObjectKeyTest) {
 
 TEST_P(ProtoStreamObjectWriterStructTest, OptionStructIntAsStringsTest) {
   StructType struct_type;
-  google::protobuf::Struct* s = struct_type.mutable_object();
+  linker::google::protobuf::Struct* s = struct_type.mutable_object();
   s->mutable_fields()->operator[]("k1").set_string_value("123");
   s->mutable_fields()->operator[]("k2").set_bool_value(true);
   s->mutable_fields()->operator[]("k3").set_string_value("-222222222");
@@ -1721,7 +1722,7 @@ TEST_P(ProtoStreamObjectWriterStructTest, OptionStructIntAsStringsTest) {
 
 TEST_P(ProtoStreamObjectWriterStructTest, Struct32BitIntsAndFloatsTest) {
   StructType struct_type;
-  google::protobuf::Struct* s = struct_type.mutable_object();
+  linker::google::protobuf::Struct* s = struct_type.mutable_object();
   s->mutable_fields()->operator[]("k1").set_number_value(1.5);
   s->mutable_fields()->operator[]("k2").set_number_value(100);
   s->mutable_fields()->operator[]("k3").set_number_value(100);
@@ -1740,7 +1741,7 @@ TEST_P(ProtoStreamObjectWriterStructTest, Struct32BitIntsAndFloatsTest) {
 TEST_P(ProtoStreamObjectWriterStructTest,
        Struct32BitIntsAndFloatsAsStringsTest) {
   StructType struct_type;
-  google::protobuf::Struct* s = struct_type.mutable_object();
+  linker::google::protobuf::Struct* s = struct_type.mutable_object();
   s->mutable_fields()->operator[]("k1").set_string_value("1.5");
   s->mutable_fields()->operator[]("k2").set_string_value("100");
   s->mutable_fields()->operator[]("k3").set_string_value("100");
@@ -1760,7 +1761,7 @@ TEST_P(ProtoStreamObjectWriterStructTest,
 
 TEST_P(ProtoStreamObjectWriterStructTest, ValuePreservesNull) {
   ValueWrapper value;
-  value.mutable_value()->set_null_value(google::protobuf::NULL_VALUE);
+  value.mutable_value()->set_null_value(linker::google::protobuf::NULL_VALUE);
 
   EXPECT_CALL(listener_, InvalidValue(_, _, _)).Times(0);
   ow_->StartObject("")->RenderNull("value")->EndObject();
@@ -1772,7 +1773,7 @@ class ProtoStreamObjectWriterMapTest : public BaseProtoStreamObjectWriterTest {
   ProtoStreamObjectWriterMapTest() {
     std::vector<const Descriptor*> descriptors;
     descriptors.push_back(MapIn::descriptor());
-    descriptors.push_back(google::protobuf::DoubleValue::descriptor());
+    descriptors.push_back(linker::google::protobuf::DoubleValue::descriptor());
     ResetTypeInfo(descriptors);
   }
 };
@@ -1843,7 +1844,7 @@ TEST_P(ProtoStreamObjectWriterMapTest, RepeatedMapKeyTest) {
 
 TEST_P(ProtoStreamObjectWriterMapTest, AnyInMap) {
   MapIn mm;
-  google::protobuf::DoubleValue d;
+  linker::google::protobuf::DoubleValue d;
   d.set_value(40.2);
   (*mm.mutable_map_any())["foo"].PackFrom(d);
   ow_->StartObject("")
@@ -1863,13 +1864,13 @@ class ProtoStreamObjectWriterAnyTest : public BaseProtoStreamObjectWriterTest {
     std::vector<const Descriptor*> descriptors;
     descriptors.push_back(AnyOut::descriptor());
     descriptors.push_back(Book::descriptor());
-    descriptors.push_back(google::protobuf::Any::descriptor());
-    descriptors.push_back(google::protobuf::DoubleValue::descriptor());
-    descriptors.push_back(google::protobuf::FieldMask::descriptor());
-    descriptors.push_back(google::protobuf::Int32Value::descriptor());
-    descriptors.push_back(google::protobuf::Struct::descriptor());
-    descriptors.push_back(google::protobuf::Timestamp::descriptor());
-    descriptors.push_back(google::protobuf::Value::descriptor());
+    descriptors.push_back(linker::google::protobuf::Any::descriptor());
+    descriptors.push_back(linker::google::protobuf::DoubleValue::descriptor());
+    descriptors.push_back(linker::google::protobuf::FieldMask::descriptor());
+    descriptors.push_back(linker::google::protobuf::Int32Value::descriptor());
+    descriptors.push_back(linker::google::protobuf::Struct::descriptor());
+    descriptors.push_back(linker::google::protobuf::Timestamp::descriptor());
+    descriptors.push_back(linker::google::protobuf::Value::descriptor());
     ResetTypeInfo(descriptors);
   }
 };
@@ -1881,9 +1882,9 @@ INSTANTIATE_TEST_SUITE_P(DifferentTypeInfoSourceTest,
 
 TEST_P(ProtoStreamObjectWriterAnyTest, AnyRenderSuccess) {
   AnyOut any;
-  google::protobuf::Any* any_type = any.mutable_any();
+  linker::google::protobuf::Any* any_type = any.mutable_any();
   any_type->set_type_url("type.googleapis.com/google.protobuf.DoubleValue");
-  google::protobuf::DoubleValue d;
+  linker::google::protobuf::DoubleValue d;
   d.set_value(40.2);
   any_type->set_value(d.SerializeAsString());
 
@@ -1898,10 +1899,10 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyRenderSuccess) {
 
 TEST_P(ProtoStreamObjectWriterAnyTest, RecursiveAny) {
   AnyOut out;
-  ::google::protobuf::Any* any = out.mutable_any();
+  ::linker::google::protobuf::Any* any = out.mutable_any();
   any->set_type_url("type.googleapis.com/google.protobuf.Any");
 
-  ::google::protobuf::Any nested_any;
+  ::linker::google::protobuf::Any nested_any;
   nested_any.set_type_url(
       "type.googleapis.com/proto_util_converter.testing.AnyM");
 
@@ -1926,13 +1927,13 @@ TEST_P(ProtoStreamObjectWriterAnyTest, RecursiveAny) {
 
 TEST_P(ProtoStreamObjectWriterAnyTest, DoubleRecursiveAny) {
   AnyOut out;
-  ::google::protobuf::Any* any = out.mutable_any();
+  ::linker::google::protobuf::Any* any = out.mutable_any();
   any->set_type_url("type.googleapis.com/google.protobuf.Any");
 
-  ::google::protobuf::Any nested_any;
+  ::linker::google::protobuf::Any nested_any;
   nested_any.set_type_url("type.googleapis.com/google.protobuf.Any");
 
-  ::google::protobuf::Any second_nested_any;
+  ::linker::google::protobuf::Any second_nested_any;
   second_nested_any.set_type_url(
       "type.googleapis.com/proto_util_converter.testing.AnyM");
 
@@ -1965,10 +1966,10 @@ TEST_P(ProtoStreamObjectWriterAnyTest, TypeUrlAtEnd) {
   book.set_length(1234);
   book.set_content("Hello World!");
 
-  ::google::protobuf::Any any;
+  ::linker::google::protobuf::Any any;
   any.PackFrom(book);
 
-  ::google::protobuf::Any outer_any;
+  ::linker::google::protobuf::Any outer_any;
   outer_any.PackFrom(any);
 
   AnyOut out;
@@ -2002,10 +2003,10 @@ TEST_P(ProtoStreamObjectWriterAnyTest, TypeUrlAtEndWithTemporaryStrings) {
   book.set_length(1234);
   book.set_content("Hello World!");
 
-  ::google::protobuf::Any any;
+  ::linker::google::protobuf::Any any;
   any.PackFrom(book);
 
-  ::google::protobuf::Any outer_any;
+  ::linker::google::protobuf::Any outer_any;
   outer_any.PackFrom(any);
 
   AnyOut out;
@@ -2173,7 +2174,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyWellKnownTypeErrorTest) {
                                       StringPiece("Invalid time format: ")));
 
   AnyOut any;
-  google::protobuf::Any* any_type = any.mutable_any();
+  linker::google::protobuf::Any* any_type = any.mutable_any();
   any_type->set_type_url("type.googleapis.com/google.protobuf.Timestamp");
 
   ow_->StartObject("")
@@ -2195,9 +2196,9 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyWellKnownTypeErrorTest) {
 // }
 TEST_P(ProtoStreamObjectWriterAnyTest, AnyWithNestedPrimitiveValue) {
   AnyOut out;
-  ::google::protobuf::Any* any = out.mutable_any();
+  ::linker::google::protobuf::Any* any = out.mutable_any();
 
-  ::google::protobuf::Value value;
+  ::linker::google::protobuf::Value value;
   value.set_string_value("abc");
   any->PackFrom(value);
 
@@ -2222,9 +2223,9 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyWithNestedPrimitiveValue) {
 // }
 TEST_P(ProtoStreamObjectWriterAnyTest, AnyWithNestedObjectValue) {
   AnyOut out;
-  ::google::protobuf::Any* any = out.mutable_any();
+  ::linker::google::protobuf::Any* any = out.mutable_any();
 
-  ::google::protobuf::Value value;
+  ::linker::google::protobuf::Value value;
   (*value.mutable_struct_value()->mutable_fields())["foo"].set_string_value(
       "abc");
   any->PackFrom(value);
@@ -2250,9 +2251,9 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyWithNestedObjectValue) {
 // }
 TEST_P(ProtoStreamObjectWriterAnyTest, AnyWithNestedArrayValue) {
   AnyOut out;
-  ::google::protobuf::Any* any = out.mutable_any();
+  ::linker::google::protobuf::Any* any = out.mutable_any();
 
-  ::google::protobuf::Value value;
+  ::linker::google::protobuf::Value value;
   value.mutable_list_value()->add_values()->set_string_value("hello");
   any->PackFrom(value);
 
@@ -2284,7 +2285,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest,
           _, StringPiece("Any"),
           StringPiece("Expect a \"value\" field for well-known types.")));
   AnyOut any;
-  google::protobuf::Any* any_type = any.mutable_any();
+  linker::google::protobuf::Any* any_type = any.mutable_any();
   any_type->set_type_url("type.googleapis.com/google.protobuf.Value");
 
   ow_->StartObject("")
@@ -2311,7 +2312,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyWellKnownTypesNoValueFieldForObject) {
           _, StringPiece("Any"),
           StringPiece("Expect a \"value\" field for well-known types.")));
   AnyOut any;
-  google::protobuf::Any* any_type = any.mutable_any();
+  linker::google::protobuf::Any* any_type = any.mutable_any();
   any_type->set_type_url("type.googleapis.com/google.protobuf.Value");
 
   ow_->StartObject("")
@@ -2339,7 +2340,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyWellKnownTypesNoValueFieldForArray) {
           _, StringPiece("Any"),
           StringPiece("Expect a \"value\" field for well-known types.")));
   AnyOut any;
-  google::protobuf::Any* any_type = any.mutable_any();
+  linker::google::protobuf::Any* any_type = any.mutable_any();
   any_type->set_type_url("type.googleapis.com/google.protobuf.Value");
 
   ow_->StartObject("")
@@ -2366,7 +2367,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyWellKnownTypesExpectObjectForStruct) {
               InvalidValue(_, StringPiece("Any"),
                            StringPiece("Expect a JSON object.")));
   AnyOut any;
-  google::protobuf::Any* any_type = any.mutable_any();
+  linker::google::protobuf::Any* any_type = any.mutable_any();
   any_type->set_type_url("type.googleapis.com/google.protobuf.Struct");
 
   ow_->StartObject("")
@@ -2391,7 +2392,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyWellKnownTypesExpectObjectForAny) {
               InvalidValue(_, StringPiece("Any"),
                            StringPiece("Expect a JSON object.")));
   AnyOut any;
-  google::protobuf::Any* any_type = any.mutable_any();
+  linker::google::protobuf::Any* any_type = any.mutable_any();
   any_type->set_type_url("type.googleapis.com/google.protobuf.Any");
 
   ow_->StartObject("")
@@ -2411,7 +2412,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyWellKnownTypesExpectObjectForAny) {
 // }
 TEST_P(ProtoStreamObjectWriterAnyTest, AnyInAnyAcceptsNull) {
   AnyOut out;
-  google::protobuf::Any empty;
+  linker::google::protobuf::Any empty;
   out.mutable_any()->PackFrom(empty);
 
   EXPECT_CALL(listener_, InvalidValue(_, _, _)).Times(0);
@@ -2432,7 +2433,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest, AnyInAnyAcceptsNull) {
 // }
 TEST_P(ProtoStreamObjectWriterAnyTest, TimestampInAnyAcceptsNull) {
   AnyOut out;
-  google::protobuf::Timestamp empty;
+  linker::google::protobuf::Timestamp empty;
   out.mutable_any()->PackFrom(empty);
 
   EXPECT_CALL(listener_, InvalidValue(_, _, _)).Times(0);
@@ -2453,7 +2454,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest, TimestampInAnyAcceptsNull) {
 // }
 TEST_P(ProtoStreamObjectWriterAnyTest, DurationInAnyAcceptsNull) {
   AnyOut out;
-  google::protobuf::Duration empty;
+  linker::google::protobuf::Duration empty;
   out.mutable_any()->PackFrom(empty);
 
   EXPECT_CALL(listener_, InvalidValue(_, _, _)).Times(0);
@@ -2474,7 +2475,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest, DurationInAnyAcceptsNull) {
 // }
 TEST_P(ProtoStreamObjectWriterAnyTest, FieldMaskInAnyAcceptsNull) {
   AnyOut out;
-  google::protobuf::FieldMask empty;
+  linker::google::protobuf::FieldMask empty;
   out.mutable_any()->PackFrom(empty);
 
   EXPECT_CALL(listener_, InvalidValue(_, _, _)).Times(0);
@@ -2495,7 +2496,7 @@ TEST_P(ProtoStreamObjectWriterAnyTest, FieldMaskInAnyAcceptsNull) {
 // }
 TEST_P(ProtoStreamObjectWriterAnyTest, WrapperInAnyAcceptsNull) {
   AnyOut out;
-  google::protobuf::Int32Value empty;
+  linker::google::protobuf::Int32Value empty;
   out.mutable_any()->PackFrom(empty);
 
   EXPECT_CALL(listener_, InvalidValue(_, _, _)).Times(0);
@@ -2514,7 +2515,7 @@ class ProtoStreamObjectWriterFieldMaskTest
   ProtoStreamObjectWriterFieldMaskTest() {
     std::vector<const Descriptor*> descriptors;
     descriptors.push_back(FieldMaskTest::descriptor());
-    descriptors.push_back(google::protobuf::FieldMask::descriptor());
+    descriptors.push_back(linker::google::protobuf::FieldMask::descriptor());
     ResetTypeInfo(descriptors);
   }
 };
@@ -2555,7 +2556,7 @@ TEST_P(ProtoStreamObjectWriterFieldMaskTest, MutipleMasksInCompactForm) {
 TEST_P(ProtoStreamObjectWriterFieldMaskTest, RepeatedFieldMaskTest) {
   FieldMaskTest expected;
   expected.set_id("1");
-  google::protobuf::FieldMask* mask = expected.add_repeated_mask();
+  linker::google::protobuf::FieldMask* mask = expected.add_repeated_mask();
   mask->add_paths("field1");
   mask->add_paths("field2");
   expected.add_repeated_mask()->add_paths("field3");
@@ -2599,7 +2600,7 @@ TEST_P(ProtoStreamObjectWriterFieldMaskTest, MaskUsingApiaryStyleShouldWork) {
   ow_->StartList("repeated_mask");
 
   ow_->RenderString("", "a(field1,field2)");
-  google::protobuf::FieldMask* mask = expected.add_repeated_mask();
+  linker::google::protobuf::FieldMask* mask = expected.add_repeated_mask();
   mask->add_paths("a.field1");
   mask->add_paths("a.field2");
 
@@ -2767,7 +2768,7 @@ class ProtoStreamObjectWriterWrappersTest
   ProtoStreamObjectWriterWrappersTest() {
     std::vector<const Descriptor*> descriptors;
     descriptors.push_back(Int32Wrapper::descriptor());
-    descriptors.push_back(google::protobuf::Int32Value::descriptor());
+    descriptors.push_back(linker::google::protobuf::Int32Value::descriptor());
     ResetTypeInfo(descriptors);
   }
 };
@@ -2790,7 +2791,7 @@ class ProtoStreamObjectWriterOneOfsTest
   ProtoStreamObjectWriterOneOfsTest() {
     std::vector<const Descriptor*> descriptors;
     descriptors.push_back(OneOfsRequest::descriptor());
-    descriptors.push_back(google::protobuf::Struct::descriptor());
+    descriptors.push_back(linker::google::protobuf::Struct::descriptor());
     ResetTypeInfo(descriptors);
   }
 };
@@ -2974,3 +2975,4 @@ TEST_P(ProtoStreamObjectWriterOneOfsTest,
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

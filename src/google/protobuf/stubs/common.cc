@@ -63,6 +63,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -327,3 +328,4 @@ const char* FatalException::what() const throw() {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

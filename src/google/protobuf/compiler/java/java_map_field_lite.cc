@@ -36,6 +36,7 @@
 #include <google/protobuf/compiler/java/java_name_resolver.h>
 #include <google/protobuf/io/printer.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -801,3 +802,4 @@ std::string ImmutableMapFieldLiteGenerator::GetBoxedType() const {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

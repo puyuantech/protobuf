@@ -40,6 +40,7 @@
 #include <google/protobuf/util/internal/json_escaping.h>
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -187,3 +188,4 @@ void JsonObjectWriter::WritePrefix(StringPiece name) {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

@@ -50,6 +50,7 @@
 #include <google/protobuf/descriptor_database.h>
 #include <google/protobuf/message.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace python {
@@ -93,5 +94,6 @@ inline const char* PyProtoAPICapsuleName() {
 }  // namespace python
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_PROTO_API_H__

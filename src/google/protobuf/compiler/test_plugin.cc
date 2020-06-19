@@ -38,6 +38,7 @@
 #include <google/protobuf/compiler/mock_code_generator.h>
 #include <google/protobuf/compiler/plugin.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -50,6 +51,7 @@ int ProtobufMain(int argc, char* argv[]) {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 int main(int argc, char* argv[]) {
 #ifdef _MSC_VER
@@ -57,5 +59,5 @@ int main(int argc, char* argv[]) {
   // please.
   _set_abort_behavior(0, ~0);
 #endif  // !_MSC_VER
-  return google::protobuf::compiler::ProtobufMain(argc, argv);
+  return linker::google::protobuf::compiler::ProtobufMain(argc, argv);
 }

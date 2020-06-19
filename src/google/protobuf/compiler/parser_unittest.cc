@@ -52,6 +52,7 @@
 #include <google/protobuf/stubs/substitute.h>
 #include <google/protobuf/stubs/map_util.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -3611,3 +3612,4 @@ TEST_F(SourceInfoTest, DocCommentsOneof) {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

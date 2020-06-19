@@ -41,6 +41,7 @@
 
 using proto3_arena_unittest::TestAllTypes;
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace {
@@ -197,3 +198,4 @@ TEST(Proto3ArenaTest, MessageFieldClearViaReflection) {
 }  // namespace
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

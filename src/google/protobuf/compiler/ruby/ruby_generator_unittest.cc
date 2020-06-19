@@ -40,6 +40,7 @@
 #include <gtest/gtest.h>
 #include <google/protobuf/testing/file.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -60,7 +61,7 @@ string FindRubyTestDir() {
 void RubyTest(string proto_file) {
   string ruby_tests = FindRubyTestDir();
 
-  google::protobuf::compiler::CommandLineInterface cli;
+  linker::google::protobuf::compiler::CommandLineInterface cli;
   cli.SetInputsAreProtoPathRelative(true);
 
   ruby::Generator ruby_generator;
@@ -129,3 +130,4 @@ TEST(RubyGeneratorTest, Proto3ExplictLegacyPackageTest) {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

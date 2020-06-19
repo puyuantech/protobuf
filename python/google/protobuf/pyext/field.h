@@ -33,6 +33,7 @@
 
 #include <Python.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -55,5 +56,6 @@ PyObject* NewFieldProperty(const FieldDescriptor* field_descriptor);
 }  // namespace python
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_FIELD_H__

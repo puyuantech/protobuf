@@ -44,6 +44,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -101,6 +102,7 @@ string PROTOC_EXPORT GetOutputFile(const FileDescriptor* descriptor,
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

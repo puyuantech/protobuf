@@ -58,6 +58,7 @@
 #error "You cannot SWIG proto headers"
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 class DescriptorPool;
@@ -68,7 +69,9 @@ class Message;
 struct Metadata;
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -124,7 +127,7 @@ class WeakFieldMap;  // weak_field_map.h
 //                  -1.
 struct ReflectionSchema {
  public:
-  // Size of a google::protobuf::Message object of this type.
+  // Size of a linker::google::protobuf::Message object of this type.
   uint32 GetObjectSize() const { return static_cast<uint32>(object_size_); }
 
   // Offset of a non-oneof field.  Getting a field offset is slightly more
@@ -304,6 +307,7 @@ PROTOBUF_EXPORT void UnknownFieldSetSerializer(const uint8* base, uint32 offset,
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

@@ -42,6 +42,7 @@
 #define snprintf _snprintf
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace {
@@ -893,3 +894,4 @@ INSTANTIATE_TEST_CASE_P(
 }  // anonymous namespace
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

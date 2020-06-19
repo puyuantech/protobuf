@@ -43,25 +43,26 @@
 #include <google/protobuf/port_def.inc>
 // clang-format on
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
 namespace {
-using google::protobuf::Any;
-using google::protobuf::BoolValue;
-using google::protobuf::BytesValue;
-using google::protobuf::DoubleValue;
-using google::protobuf::Enum;
-using google::protobuf::EnumValue;
-using google::protobuf::Field;
-using google::protobuf::FloatValue;
-using google::protobuf::Int32Value;
-using google::protobuf::Int64Value;
-using google::protobuf::Option;
-using google::protobuf::StringValue;
-using google::protobuf::Type;
-using google::protobuf::UInt32Value;
-using google::protobuf::UInt64Value;
+using linker::google::protobuf::Any;
+using linker::google::protobuf::BoolValue;
+using linker::google::protobuf::BytesValue;
+using linker::google::protobuf::DoubleValue;
+using linker::google::protobuf::Enum;
+using linker::google::protobuf::EnumValue;
+using linker::google::protobuf::Field;
+using linker::google::protobuf::FloatValue;
+using linker::google::protobuf::Int32Value;
+using linker::google::protobuf::Int64Value;
+using linker::google::protobuf::Option;
+using linker::google::protobuf::StringValue;
+using linker::google::protobuf::Type;
+using linker::google::protobuf::UInt32Value;
+using linker::google::protobuf::UInt64Value;
 
 using util::Status;
 using util::error::INVALID_ARGUMENT;
@@ -370,3 +371,4 @@ TypeResolver* NewTypeResolverForDescriptorPool(const std::string& url_prefix,
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

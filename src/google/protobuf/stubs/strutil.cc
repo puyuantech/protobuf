@@ -57,6 +57,7 @@
 #define snprintf _snprintf
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -2469,3 +2470,4 @@ double NoLocaleStrtod(const char *str, char **endptr) {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

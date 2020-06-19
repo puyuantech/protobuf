@@ -63,6 +63,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -8043,3 +8044,4 @@ TEST_F(LazilyBuildDependenciesTest, Dependency) {
 }  // namespace descriptor_unittest
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

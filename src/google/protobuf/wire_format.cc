@@ -57,6 +57,7 @@
 
 const size_t kMapEntryTagByteSize = 2;
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -1369,3 +1370,4 @@ size_t ComputeUnknownFieldsSize(const InternalMetadataWithArena& metadata,
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

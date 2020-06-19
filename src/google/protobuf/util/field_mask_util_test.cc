@@ -39,6 +39,7 @@
 #include <google/protobuf/unittest.pb.h>
 #include <gtest/gtest.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -113,7 +114,7 @@ TEST_F(SnakeCaseCamelCaseTest, RoundTripTest) {
   } while (std::next_permutation(name.begin(), name.end()));
 }
 
-using google::protobuf::FieldMask;
+using linker::google::protobuf::FieldMask;
 using protobuf_unittest::NestedTestAllTypes;
 using protobuf_unittest::TestAllTypes;
 using protobuf_unittest::TestRequired;
@@ -818,3 +819,4 @@ TEST(FieldMaskUtilTest, TrimMessageReturnValue) {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

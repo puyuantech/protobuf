@@ -54,6 +54,7 @@
 #include <google/protobuf/dynamic_message.h>
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -682,3 +683,4 @@ bool FileGenerator::ShouldIncludeDependency(const FileDescriptor* descriptor,
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

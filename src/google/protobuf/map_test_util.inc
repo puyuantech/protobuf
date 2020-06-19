@@ -32,6 +32,7 @@
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/message.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -269,3 +270,4 @@ inline std::vector<const Message*> MapTestUtil::GetMapEntriesFromRelease(
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

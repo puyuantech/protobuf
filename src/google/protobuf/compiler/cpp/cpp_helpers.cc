@@ -55,6 +55,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -343,7 +344,7 @@ std::string Namespace(const FileDescriptor* d, const Options& options) {
   std::string ret = Namespace(d->package());
   if (IsWellKnownMessage(d) && options.opensource_runtime) {
     // Written with string concatenation to prevent rewriting of
-    // ::google::protobuf.
+    // ::linker::google::protobuf.
     ret = StringReplace(ret,
                         "::google::"
                         "protobuf",
@@ -488,13 +489,13 @@ std::string StripProto(const std::string& filename) {
 const char* PrimitiveTypeName(FieldDescriptor::CppType type) {
   switch (type) {
     case FieldDescriptor::CPPTYPE_INT32:
-      return "::google::protobuf::int32";
+      return "::linker::google::protobuf::int32";
     case FieldDescriptor::CPPTYPE_INT64:
-      return "::google::protobuf::int64";
+      return "::linker::google::protobuf::int64";
     case FieldDescriptor::CPPTYPE_UINT32:
-      return "::google::protobuf::uint32";
+      return "::linker::google::protobuf::uint32";
     case FieldDescriptor::CPPTYPE_UINT64:
-      return "::google::protobuf::uint64";
+      return "::linker::google::protobuf::uint64";
     case FieldDescriptor::CPPTYPE_DOUBLE:
       return "double";
     case FieldDescriptor::CPPTYPE_FLOAT:
@@ -1831,3 +1832,4 @@ void GenerateParserLoop(const Descriptor* descriptor, int num_hasbits,
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

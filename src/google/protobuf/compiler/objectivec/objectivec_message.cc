@@ -45,6 +45,7 @@
 #include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.pb.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -607,3 +608,4 @@ void MessageGenerator::GenerateSource(io::Printer* printer) {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

@@ -39,6 +39,7 @@
 #include <string>
 #include <google/protobuf/compiler/java/java_field.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -49,7 +50,9 @@ class ClassNameResolver;  // name_resolver.h
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -171,5 +174,6 @@ class RepeatedImmutableMessageFieldGenerator : public ImmutableFieldGenerator {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_JAVA_MESSAGE_FIELD_H__

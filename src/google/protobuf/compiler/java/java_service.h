@@ -38,6 +38,7 @@
 #include <map>
 #include <google/protobuf/descriptor.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -51,7 +52,9 @@ class Printer;  // printer.h
 }
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -135,5 +138,6 @@ class ImmutableServiceGenerator : public ServiceGenerator {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // NET_PROTO2_COMPILER_JAVA_SERVICE_H__

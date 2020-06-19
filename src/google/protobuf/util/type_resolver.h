@@ -41,6 +41,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 class DescriptorPool;
@@ -56,11 +57,11 @@ class PROTOBUF_EXPORT TypeResolver {
 
   // Resolves a type url for a message type.
   virtual util::Status ResolveMessageType(
-      const std::string& type_url, google::protobuf::Type* message_type) = 0;
+      const std::string& type_url, linker::google::protobuf::Type* message_type) = 0;
 
   // Resolves a type url for an enum type.
   virtual util::Status ResolveEnumType(const std::string& type_url,
-                                         google::protobuf::Enum* enum_type) = 0;
+                                         linker::google::protobuf::Enum* enum_type) = 0;
 
  private:
   GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(TypeResolver);
@@ -69,6 +70,7 @@ class PROTOBUF_EXPORT TypeResolver {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

@@ -48,6 +48,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -77,6 +78,7 @@ PROTOBUF_EXPORT extern string StringPrintfVector(const char* format,
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

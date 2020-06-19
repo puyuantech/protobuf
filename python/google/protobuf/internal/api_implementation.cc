@@ -30,6 +30,7 @@
 
 #include <Python.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace python {
@@ -125,3 +126,4 @@ PyMODINIT_FUNC INITFUNC() {
 }  // namespace python
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

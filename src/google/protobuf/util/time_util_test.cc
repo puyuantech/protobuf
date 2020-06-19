@@ -37,12 +37,13 @@
 #include <google/protobuf/testing/googletest.h>
 #include <gtest/gtest.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
 
-using google::protobuf::Duration;
-using google::protobuf::Timestamp;
+using linker::google::protobuf::Duration;
+using linker::google::protobuf::Timestamp;
 
 namespace {
 
@@ -378,3 +379,4 @@ TEST(TimeUtilTest, TimestampOperators) {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

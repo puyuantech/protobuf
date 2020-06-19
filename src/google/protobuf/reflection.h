@@ -44,6 +44,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -291,8 +292,8 @@ namespace internal {
 //   CPPTYPE_BOOL         bool                    bool
 //   CPPTYPE_ENUM         generated enum type     int32
 //   CPPTYPE_STRING       string                  std::string
-//   CPPTYPE_MESSAGE      generated message type  google::protobuf::Message
-//                        or google::protobuf::Message
+//   CPPTYPE_MESSAGE      generated message type  linker::google::protobuf::Message
+//                        or linker::google::protobuf::Message
 //
 // Note that for enums we use int32 in the interface.
 //
@@ -556,6 +557,7 @@ struct RefTypeTraits<
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

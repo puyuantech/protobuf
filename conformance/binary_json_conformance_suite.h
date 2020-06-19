@@ -34,6 +34,7 @@
 #include "third_party/jsoncpp/json.h"
 #include "conformance_test.h"
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -113,7 +114,7 @@ class BinaryAndJsonConformanceSuite : public ConformanceTestSuite {
   void ExpectHardParseFailureForProto(const std::string& proto,
                                       const std::string& test_name,
                                       ConformanceLevel level);
-  void TestPrematureEOFForType(google::protobuf::FieldDescriptor::Type type);
+  void TestPrematureEOFForType(linker::google::protobuf::FieldDescriptor::Type type);
   void TestIllegalTags();
   template <class MessageType>
   void TestOneofMessage (MessageType &message,
@@ -122,20 +123,21 @@ class BinaryAndJsonConformanceSuite : public ConformanceTestSuite {
   void TestUnknownMessage (MessageType &message,
                            bool is_proto3);
   void TestValidDataForType(
-      google::protobuf::FieldDescriptor::Type,
+      linker::google::protobuf::FieldDescriptor::Type,
       std::vector<std::pair<std::string, std::string>> values);
   void TestValidDataForRepeatedScalarMessage();
-  void TestValidDataForMapType(google::protobuf::FieldDescriptor::Type,
-                               google::protobuf::FieldDescriptor::Type);
-  void TestValidDataForOneofType(google::protobuf::FieldDescriptor::Type);
+  void TestValidDataForMapType(linker::google::protobuf::FieldDescriptor::Type,
+                               linker::google::protobuf::FieldDescriptor::Type);
+  void TestValidDataForOneofType(linker::google::protobuf::FieldDescriptor::Type);
   void TestMergeOneofMessage();
   void TestOverwriteMessageValueMap();
 
-  std::unique_ptr<google::protobuf::util::TypeResolver> type_resolver_;
+  std::unique_ptr<linker::google::protobuf::util::TypeResolver> type_resolver_;
   std::string type_url_;
 };
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // CONFORMANCE_BINARY_JSON_CONFORMANCE_SUITE_H

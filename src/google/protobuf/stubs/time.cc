@@ -5,6 +5,7 @@
 #include <google/protobuf/stubs/stringprintf.h>
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -363,3 +364,4 @@ bool ParseTime(const string& value, int64* seconds, int32* nanos) {
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

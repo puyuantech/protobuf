@@ -64,6 +64,7 @@
 
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -71,12 +72,12 @@ namespace compiler {
 #if defined(_WIN32)
 // DO NOT include <io.h>, instead create functions in io_win32.{h,cc} and import
 // them like we do below.
-using google::protobuf::io::win32::access;
-using google::protobuf::io::win32::close;
-using google::protobuf::io::win32::dup;
-using google::protobuf::io::win32::dup2;
-using google::protobuf::io::win32::open;
-using google::protobuf::io::win32::write;
+using linker::google::protobuf::io::win32::access;
+using linker::google::protobuf::io::win32::close;
+using linker::google::protobuf::io::win32::dup;
+using linker::google::protobuf::io::win32::dup2;
+using linker::google::protobuf::io::win32::open;
+using linker::google::protobuf::io::win32::write;
 #endif
 
 // Disable the whole test when we use tcmalloc for "draconian" heap checks, in
@@ -2594,3 +2595,4 @@ INSTANTIATE_TEST_SUITE_P(FileDescriptorSetSource, EncodeDecodeTest,
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

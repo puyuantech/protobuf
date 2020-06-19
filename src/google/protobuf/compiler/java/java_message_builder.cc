@@ -53,6 +53,7 @@
 #include <google/protobuf/stubs/strutil.h>
 #include <google/protobuf/stubs/substitute.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -723,3 +724,4 @@ void MessageBuilderGenerator::GenerateIsInitialized(io::Printer* printer) {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

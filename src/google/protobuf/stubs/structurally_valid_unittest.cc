@@ -34,6 +34,7 @@
 #include <google/protobuf/stubs/common.h>
 #include <gtest/gtest.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -68,3 +69,4 @@ TEST(StructurallyValidTest, InvalidUTF8String) {
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

@@ -56,6 +56,7 @@
 // Always include as last one, otherwise it can break compilation
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -917,6 +918,7 @@ class PROTOBUF_EXPORT FieldContext {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

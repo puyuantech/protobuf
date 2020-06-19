@@ -38,6 +38,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -119,6 +120,7 @@ PROTOBUF_EXPORT std::ostream& operator<<(std::ostream& os, const Status& x);
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

@@ -51,6 +51,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace io {
@@ -332,6 +333,7 @@ class PROTOBUF_EXPORT ConcatenatingInputStream : public ZeroCopyInputStream {
 }  // namespace io
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

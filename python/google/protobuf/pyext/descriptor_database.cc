@@ -39,6 +39,7 @@
 #include <google/protobuf/pyext/message.h>
 #include <google/protobuf/pyext/scoped_pyobject_ptr.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace python {
@@ -183,3 +184,4 @@ bool PyDescriptorDatabase::FindAllExtensionNumbers(
 }  // namespace python
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

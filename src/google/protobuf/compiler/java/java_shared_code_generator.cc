@@ -43,6 +43,7 @@
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/stubs/strutil.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -195,3 +196,4 @@ void SharedCodeGenerator::GenerateDescriptors(io::Printer* printer) {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

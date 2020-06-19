@@ -49,17 +49,18 @@
 #include <iostream>
 #include <fstream>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
 #ifdef _WIN32
 // DO NOT include <io.h>, instead create functions in io_win32.{h,cc} and import
 // them like we do below.
-using google::protobuf::io::win32::close;
-using google::protobuf::io::win32::dup2;
-using google::protobuf::io::win32::dup;
-using google::protobuf::io::win32::mkdir;
-using google::protobuf::io::win32::open;
+using linker::google::protobuf::io::win32::close;
+using linker::google::protobuf::io::win32::dup2;
+using linker::google::protobuf::io::win32::dup;
+using linker::google::protobuf::io::win32::mkdir;
+using linker::google::protobuf::io::win32::open;
 #endif
 
 #ifndef O_BINARY
@@ -302,3 +303,4 @@ struct ForceShutdown {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

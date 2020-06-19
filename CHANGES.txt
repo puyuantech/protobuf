@@ -494,7 +494,7 @@
   * Deprecated the unsafe_arena_release_* and unsafe_arena_add_allocated_*
     methods for string fields.
   * Added move constructor and move assignment to RepeatedField,
-    RepeatedPtrField and google::protobuf::Any.
+    RepeatedPtrField and linker::google::protobuf::Any.
   * Added perfect forwarding in Arena::CreateMessage
   * In-progress experimental support for implicit weak fields with lite protos.
     This feature allows the linker to strip out more unused messages and reduce
@@ -876,7 +876,7 @@
   * Moved default_instances to global variables. This allows default_instance
     addresses to be known at compile time.
   * Adding missing generic gcc 64-bit atomicops.
-  * Restore New*Callback into google::protobuf namespace since these are used
+  * Restore New*Callback into linker::google::protobuf namespace since these are used
     by the service stubs code
   * JSON support.
     * Fixed some conformance issues.
@@ -1043,7 +1043,7 @@
   * Introduced a deterministic serialization API in
     CodedOutputStream::SetSerializationDeterministic(bool). See the notes about
     deterministic serialization in the General section.
-  * Added google::protobuf::Map::swap() to swap two map fields.
+  * Added linker::google::protobuf::Map::swap() to swap two map fields.
   * Fixed a memory leak when calling Reflection::ReleaseMessage() on a message
     allocated on arena.
   * Improved error reporting when parsing text format protos.
@@ -1670,7 +1670,7 @@
     APIs when creating messages. A quick example of using the arena API:
 
       {
-        google::protobuf::Arena arena;
+        linker::google::protobuf::Arena arena;
         // Allocate a protobuf message in the arena.
         MyMessage* message = Arena::CreateMessage<MyMessage>(&arena);
         // All submessages will be allocated in the same arena.
@@ -1962,7 +1962,7 @@
     produced by some compilers.
   * The [deprecated=true] option now causes the C++ code generator to generate
     a GCC-style deprecation annotation (no-op on other compilers).
-  * google::protobuf::GetEnumDescriptor<SomeGeneratedEnumType>() returns the
+  * linker::google::protobuf::GetEnumDescriptor<SomeGeneratedEnumType>() returns the
     EnumDescriptor for that type -- useful for templates which cannot call
     SomeGeneratedEnumType_descriptor().
   * Various optimizations and obscure bug fixes.

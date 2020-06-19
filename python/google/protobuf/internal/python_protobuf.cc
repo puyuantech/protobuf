@@ -32,6 +32,7 @@
 
 #include <google/protobuf/python/python_protobuf.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace python {
@@ -57,3 +58,4 @@ Message* MutableCProtoInsidePyProto(PyObject* msg) {
 }  // namespace python
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

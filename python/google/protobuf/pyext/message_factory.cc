@@ -50,6 +50,7 @@
                         : PyBytes_AsStringAndSize(ob, (charpp), (sizep)))
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace python {
@@ -301,3 +302,4 @@ bool InitMessageFactory() {
 }  // namespace python
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

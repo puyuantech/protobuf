@@ -40,8 +40,9 @@
 #include <google/protobuf/testing/googletest.h>
 #include <gtest/gtest.h>
 
-namespace GOOGLE_NAMESPACE = google::protobuf::internal;
+namespace GOOGLE_NAMESPACE = linker::google::protobuf::internal;
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -128,3 +129,4 @@ TEST(TemplateUtilTest, TestIdentity) {
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

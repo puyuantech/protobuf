@@ -40,8 +40,10 @@
 
 #include <google/protobuf/test_util.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

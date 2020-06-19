@@ -46,6 +46,7 @@
 #error "You cannot SWIG proto headers"
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 class Arena;
@@ -57,13 +58,15 @@ class MapField;
 }
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
 
-// MapEntry is the returned google::protobuf::Message when calling AddMessage of
-// google::protobuf::Reflection. In order to let it work with generated message
+// MapEntry is the returned linker::google::protobuf::Message when calling AddMessage of
+// linker::google::protobuf::Reflection. In order to let it work with generated message
 // reflection, its in-memory type is the same as generated message with the same
 // fields. However, in order to decide the in-memory type of key/value, we need
 // to know both their cpp type in generated api and proto type. In
@@ -158,6 +161,7 @@ struct DeconstructMapEntry<MapEntry<Derived, K, V, key, value, default_enum> > {
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

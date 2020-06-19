@@ -57,6 +57,7 @@
 #error "You cannot SWIG proto headers"
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -422,6 +423,7 @@ inline void UnknownField::SetType(Type type) {
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 #endif  // GOOGLE_PROTOBUF_UNKNOWN_FIELD_SET_H__

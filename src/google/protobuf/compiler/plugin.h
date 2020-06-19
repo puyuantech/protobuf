@@ -36,7 +36,7 @@
 // CodeGenerator, then create a main() function like:
 //   int main(int argc, char* argv[]) {
 //     MyCodeGenerator generator;
-//     return google::protobuf::compiler::PluginMain(argc, argv, &generator);
+//     return linker::google::protobuf::compiler::PluginMain(argc, argv, &generator);
 //   }
 // You must link your plugin against libprotobuf and libprotoc.
 //
@@ -66,6 +66,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -88,6 +89,7 @@ bool GenerateCode(const CodeGeneratorRequest& request,
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

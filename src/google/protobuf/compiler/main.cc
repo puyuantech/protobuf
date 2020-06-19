@@ -42,6 +42,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -103,6 +104,7 @@ int ProtobufMain(int argc, char* argv[]) {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 int main(int argc, char* argv[]) {
   return PROTOBUF_NAMESPACE_ID::compiler::ProtobufMain(argc, argv);

@@ -8,13 +8,14 @@
 #include <sstream>
 #include <algorithm>
 
-using google::protobuf::Descriptor;
-using google::protobuf::DescriptorProto;
-using google::protobuf::FileDescriptorProto;
-using google::protobuf::FieldDescriptorProto;
-using google::protobuf::Message;
-using google::protobuf::EnumValueDescriptorProto;
+using linker::google::protobuf::Descriptor;
+using linker::google::protobuf::DescriptorProto;
+using linker::google::protobuf::FileDescriptorProto;
+using linker::google::protobuf::FieldDescriptorProto;
+using linker::google::protobuf::Message;
+using linker::google::protobuf::EnumValueDescriptorProto;
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -190,5 +191,6 @@ class FieldScrubber {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #endif  // PROTOBUF_BENCHMARKS_UTIL_SCHEMA_PROTO2_TO_PROTO3_UTIL_H_

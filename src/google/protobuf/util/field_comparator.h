@@ -41,6 +41,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -254,6 +255,7 @@ class PROTOBUF_EXPORT DefaultFieldComparator : public FieldComparator {
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

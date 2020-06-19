@@ -64,6 +64,7 @@
 #include <google/protobuf/stubs/stl_util.h>
 
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -2508,3 +2509,4 @@ void TextFormat::Printer::PrintUnknownFields(
 
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

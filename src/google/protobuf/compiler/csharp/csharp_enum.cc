@@ -42,6 +42,7 @@
 #include <google/protobuf/compiler/csharp/csharp_helpers.h>
 #include <google/protobuf/compiler/csharp/csharp_options.h>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -96,3 +97,4 @@ void EnumGenerator::Generate(io::Printer* printer) {
 }  // namespace compiler
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

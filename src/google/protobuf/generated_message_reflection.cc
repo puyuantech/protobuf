@@ -54,22 +54,23 @@
 
 #define GOOGLE_PROTOBUF_HAS_ONEOF
 
-using google::protobuf::internal::ArenaStringPtr;
-using google::protobuf::internal::DescriptorTable;
-using google::protobuf::internal::ExtensionSet;
-using google::protobuf::internal::GenericTypeHandler;
-using google::protobuf::internal::GetEmptyString;
-using google::protobuf::internal::InlinedStringField;
-using google::protobuf::internal::InternalMetadataWithArena;
-using google::protobuf::internal::LazyField;
-using google::protobuf::internal::MapFieldBase;
-using google::protobuf::internal::MigrationSchema;
-using google::protobuf::internal::OnShutdownDelete;
-using google::protobuf::internal::ReflectionSchema;
-using google::protobuf::internal::RepeatedPtrFieldBase;
-using google::protobuf::internal::StringSpaceUsedExcludingSelfLong;
-using google::protobuf::internal::WrappedMutex;
+using linker::google::protobuf::internal::ArenaStringPtr;
+using linker::google::protobuf::internal::DescriptorTable;
+using linker::google::protobuf::internal::ExtensionSet;
+using linker::google::protobuf::internal::GenericTypeHandler;
+using linker::google::protobuf::internal::GetEmptyString;
+using linker::google::protobuf::internal::InlinedStringField;
+using linker::google::protobuf::internal::InternalMetadataWithArena;
+using linker::google::protobuf::internal::LazyField;
+using linker::google::protobuf::internal::MapFieldBase;
+using linker::google::protobuf::internal::MigrationSchema;
+using linker::google::protobuf::internal::OnShutdownDelete;
+using linker::google::protobuf::internal::ReflectionSchema;
+using linker::google::protobuf::internal::RepeatedPtrFieldBase;
+using linker::google::protobuf::internal::StringSpaceUsedExcludingSelfLong;
+using linker::google::protobuf::internal::WrappedMutex;
 
+namespace linker {
 namespace google {
 namespace protobuf {
 
@@ -120,7 +121,7 @@ void ReportReflectionUsageError(const Descriptor* descriptor,
                                 const FieldDescriptor* field,
                                 const char* method, const char* description) {
   GOOGLE_LOG(FATAL) << "Protocol Buffer reflection usage error:\n"
-                "  Method      : google::protobuf::Reflection::"
+                "  Method      : linker::google::protobuf::Reflection::"
              << method
              << "\n"
                 "  Message type: "
@@ -143,7 +144,7 @@ static void ReportReflectionUsageTypeError(
     const char* method, FieldDescriptor::CppType expected_type) {
   GOOGLE_LOG(FATAL)
       << "Protocol Buffer reflection usage error:\n"
-         "  Method      : google::protobuf::Reflection::"
+         "  Method      : linker::google::protobuf::Reflection::"
       << method
       << "\n"
          "  Message type: "
@@ -164,7 +165,7 @@ static void ReportReflectionUsageEnumTypeError(
     const Descriptor* descriptor, const FieldDescriptor* field,
     const char* method, const EnumValueDescriptor* value) {
   GOOGLE_LOG(FATAL) << "Protocol Buffer reflection usage error:\n"
-                "  Method      : google::protobuf::Reflection::"
+                "  Method      : linker::google::protobuf::Reflection::"
              << method
              << "\n"
                 "  Message type: "
@@ -2437,3 +2438,4 @@ void UnknownFieldSetSerializer(const uint8* base, uint32 offset, uint32 tag,
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker

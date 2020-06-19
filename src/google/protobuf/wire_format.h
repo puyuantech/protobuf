@@ -54,12 +54,15 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 class UnknownFieldSet;  // unknown_field_set.h
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace internal {
@@ -386,6 +389,7 @@ size_t ComputeUnknownFieldsSize(const InternalMetadataWithArena& metadata,
 }  // namespace internal
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

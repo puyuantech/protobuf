@@ -43,6 +43,7 @@
 
 #include <google/protobuf/port_def.inc>
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace util {
@@ -102,6 +103,7 @@ bool PROTOBUF_EXPORT SerializeDelimitedToCodedStream(
 }  // namespace util
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
 
 #include <google/protobuf/port_undef.inc>
 

@@ -55,6 +55,7 @@
   #endif
 #endif
 
+namespace linker {
 namespace google {
 namespace protobuf {
 namespace python {
@@ -776,3 +777,4 @@ PyTypeObject RepeatedScalarContainer_Type = {
 }  // namespace python
 }  // namespace protobuf
 }  // namespace google
+}  // namespace linker
